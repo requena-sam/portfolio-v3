@@ -53,6 +53,17 @@
   }
 }
 
+// honeypot — off-screen rather than display:none/visibility:hidden, which some
+// bots detect and skip; a real visitor never sees or reaches this field
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+}
+
 .form-group {
   margin-bottom: 18px;
 }

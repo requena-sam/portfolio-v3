@@ -1,5 +1,10 @@
 <div>
     <form wire:submit="submit">
+        <div class="hp-field" aria-hidden="true">
+            <label for="f-website">Site web</label>
+            <input type="text" id="f-website" wire:model="website" tabindex="-1" autocomplete="off">
+        </div>
+
         <div class="form-row-2">
             <div class="form-group">
                 <label class="form-label" for="f-name">{{ __('home.contact.form.name_label') }}</label>

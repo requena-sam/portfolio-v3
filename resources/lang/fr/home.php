@@ -108,6 +108,7 @@ return [
             'submitting' => 'Envoi en cours...',
             'note' => 'Je réponds généralement sous 24h ouvrées.',
             'success' => '✓ Message envoyé ! Je vous réponds rapidement.',
+            'throttled' => 'Trop de messages envoyés. Réessayez dans quelques minutes.',
         ],
     ],
 
