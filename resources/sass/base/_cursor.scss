@@ -1,0 +1,77 @@
+@media (hover: hover) and (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+}
+
+#cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background: var(--blue);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  will-change: transform;
+  transition: width .25s cubic-bezier(.34, 1.56, .64, 1), height .25s cubic-bezier(.34, 1.56, .64, 1), background .2s;
+  mix-blend-mode: multiply;
+  box-shadow: 0 0 18px rgba(124, 58, 237, .6), 0 0 44px rgba(124, 58, 237, .22);
+
+  &.hover {
+    width: 50px;
+    height: 50px;
+    background: rgba(124, 58, 237, .13);
+    box-shadow: 0 0 30px rgba(124, 58, 237, .4);
+  }
+
+  &.click {
+    width: 7px;
+    height: 7px;
+    background: #6D28D9;
+  }
+}
+
+#cursor-trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(124, 58, 237, .28);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  will-change: transform;
+  transition: transform .15s ease, width .25s, height .25s, opacity .3s, border-color .2s;
+
+  &.hover {
+    opacity: 0;
+  }
+}
+
+// Safari can't keep up with the trail's animated transform (stutter/teleporting) —
+// drop it there and keep just the small dot cursor.
+html.is-safari #cursor-trail {
+  display: none;
+}
+
+// mix-blend-mode + a blurred box-shadow on an element that moves every frame
+// forces WebKit to recompute compositing continuously — a known Safari
+// performance hog. Simplify the dot there instead of blending it.
+html.is-safari #cursor {
+  mix-blend-mode: normal;
+  box-shadow: none;
+}
+
+@media (max-width: 900px) {
+  #cursor,
+  #cursor-trail {
+    display: none;
+  }
+
+  * {
+    cursor: auto !important;
+  }
+}
