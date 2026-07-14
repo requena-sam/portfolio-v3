@@ -91,7 +91,7 @@ return [
         'title_line_1' => 'Parlons de',
         'title_line_2' => 'votre projet.',
         'email_label' => 'Email',
-        'email' => 'samrequena1510@gmail.com',
+        'email' => 'contact@samrequena.be',
         'availability_label' => 'Disponibilité',
         'availability_value' => 'Ouvert aux opportunités & missions freelance',
         'socials_label' => 'Réseaux',

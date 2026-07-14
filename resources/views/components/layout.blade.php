@@ -7,7 +7,7 @@
 @php
     $metaDescription = $description ?? __('common.meta.description');
     $canonicalUrl = url()->current();
-    $shareImage = asset('apple-touch-icon.png');
+    $shareImage = asset('og-image.png');
 @endphp
 <!DOCTYPE html>
 <html lang="fr">
@@ -24,7 +24,9 @@
 <meta property="og:description" content="{{ $metaDescription }}">
 <meta property="og:url" content="{{ $canonicalUrl }}">
 <meta property="og:image" content="{{ $shareImage }}">
-<meta name="twitter:card" content="summary">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ $title }}">
 <meta name="twitter:description" content="{{ $metaDescription }}">
 <meta name="twitter:image" content="{{ $shareImage }}">
