@@ -1,0 +1,26 @@
+:root {
+  --blue: #7C3AED;
+  --blue-mid: #8B5CF6;
+  --blue-light: #A78BFA;
+  --blue-bg: #F5F3FF;
+  --blue-border: #DDD6FE;
+  --text: #0A0A12;
+  --muted: #6B7280;
+  --light: #9CA3AF;
+  --border: #E5E7EB;
+  --bg: #FFFFFF;
+  --bg2: #F8F9FC;
+  --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', monospace;
+
+  // decorative accent — fixed violet/blue across the whole site
+  --accent: #7C3AED;
+  --accent-soft: #F5F3FF;
+  --accent-border: #DDD6FE;
+}
+
+$bp-1100: 1100px;
+$bp-900: 900px;
+$bp-740: 740px;
+$bp-640: 640px;
+$bp-480: 480px;
+$bp-380: 380px;

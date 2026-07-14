@@ -1,0 +1,58 @@
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+::selection {
+  background: var(--blue);
+  color: #fff;
+}
+
+// small blinking availability dot, reused in nav, drawer, hero eyebrow, badges...
+.dot-g {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4ADE80;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 2px rgba(74, 222, 128, .3);
+  animation: blink 2.4s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .3; }
+}
+
+// page load curtain
+#curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: var(--bg);
+  pointer-events: none;
+  transition: opacity .5s ease;
+
+  &.hidden {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+
+  .reveal,
+  .reveal-line > span,
+  .sec-inner-zoom {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
