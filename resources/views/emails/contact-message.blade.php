@@ -1,16 +1,13 @@
 <x-mail::message>
-# Nouveau message depuis le portfolio
+# Nouveau message du portfolio
 
-**De :** {{ $senderName }} ({{ $senderEmail }})
+**{{ $senderName }}** ({{ $senderEmail }}) vous a écrit à propos de « {{ $messageSubject }} ».
 
-**Sujet :** {{ $messageSubject }}
-
+<x-mail::panel>
 {{ $body }}
+</x-mail::panel>
 
-<x-mail::button :url="'mailto:'.$senderEmail">
+<x-mail::button :url="'mailto:'.$senderEmail" color="primary">
 Répondre à {{ $senderName }}
 </x-mail::button>
-
-Merci,<br>
-{{ config('app.name') }}
 </x-mail::message>
