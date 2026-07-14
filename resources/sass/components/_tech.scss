@@ -1,0 +1,117 @@
+// tech stack — real SVG icons, used in home "about" section
+.tech-wrap {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.tech-see-more {
+  margin-top: 20px;
+}
+
+.tech-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 4px;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  transition: color .15s, padding-left .25s, background .15s;
+  border-radius: 8px;
+
+  &:first-child {
+    border-top: 1px solid var(--border);
+  }
+
+  &:hover {
+    color: var(--blue);
+    padding-left: 12px;
+    background: var(--blue-bg);
+
+    .tech-ico {
+      transform: rotate(-8deg) scale(1.1);
+    }
+  }
+}
+
+.tech-ico {
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
+  background: var(--blue-bg);
+  border: 1px solid var(--blue-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 6px;
+  transition: transform .3s cubic-bezier(.34, 1.56, .64, 1);
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.tech-yr {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--light);
+  font-weight: 400;
+  font-family: var(--mono);
+}
+
+// standout treatment for the strongest skills (Très bonne maîtrise)
+.tech-row--top {
+  .tech-ico {
+    background: var(--blue-bg);
+    border-color: var(--blue-border);
+  }
+
+  .tech-yr {
+    color: var(--blue);
+    font-weight: 700;
+  }
+}
+
+// stack tags used on project cards
+.proj-stack {
+  list-style: none;
+  margin: 0 0 16px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.stag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 4px 9px 4px 6px;
+  transition: border-color .18s, color .18s, transform .18s;
+
+  &:hover {
+    border-color: var(--blue-border);
+    color: var(--blue);
+    transform: translateY(-1px);
+  }
+
+  svg {
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+  }
+}

@@ -1,0 +1,173 @@
+// depth layer background system — generic parallax orb utility, available
+// for any section background (not currently used by a specific page, kept
+// for parity with the shared stylesheet and future use).
+.depth-layer {
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+  will-change: transform;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+
+  &.blue-1 { background: radial-gradient(circle, rgba(124, 58, 237, .18) 0%, transparent 70%); }
+  &.blue-2 { background: radial-gradient(circle, rgba(167, 139, 250, .15) 0%, transparent 70%); }
+  &.blue-3 { background: radial-gradient(circle, rgba(139, 92, 246, .12) 0%, transparent 70%); }
+}
+
+// decorative floating robot mascots + satellite, reused across hero and sections
+.hero-bot {
+  position: absolute;
+  z-index: 1;
+  will-change: transform;
+}
+
+#hero-robot {
+  position: absolute;
+  top: 14%;
+  right: 8%;
+  width: 150px;
+  height: 150px;
+  animation: robotFloat 5s ease-in-out infinite;
+}
+
+#hero-robot-left {
+  position: absolute;
+  bottom: 8%;
+  left: 6%;
+  width: 105px;
+  height: 105px;
+  animation: robotFloat2 6.2s ease-in-out infinite;
+}
+
+@keyframes robotFloat {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-18px) rotate(2deg); }
+}
+
+@keyframes robotFloat2 {
+  0%, 100% { transform: translateY(0) rotate(3deg); }
+  50% { transform: translateY(-14px) rotate(-3deg); }
+}
+
+.hero-bot .robot-eye {
+  animation: robotBlink 4s ease-in-out infinite;
+  transform-origin: center;
+}
+
+#hero-robot-left .robot-eye {
+  animation-delay: 1.4s;
+}
+
+@keyframes robotBlink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+
+.hero-bot .robot-antenna-dot {
+  animation: blink 1.8s ease-in-out infinite;
+}
+
+@media (max-width: 1100px) {
+  #hero-robot { width: 110px; height: 110px; right: 5%; top: 12%; }
+  #hero-robot-left { width: 80px; height: 80px; left: 4%; bottom: 6%; }
+}
+
+@media (max-width: 768px) {
+  #hero-robot,
+  #hero-robot-left {
+    display: none;
+  }
+}
+
+// small section droids
+.sec-bot {
+  position: absolute;
+  z-index: 1;
+  will-change: transform;
+  opacity: .9;
+  color: var(--accent);
+  transition: color 1.2s ease;
+
+  &.float-a { animation: secBotFloatA 5.5s ease-in-out infinite; }
+  &.float-b { animation: secBotFloatB 6.5s ease-in-out infinite; }
+
+  .robot-eye {
+    animation: robotBlink 4.5s ease-in-out infinite;
+    transform-origin: center;
+  }
+
+  .robot-antenna-dot {
+    animation: blink 2s ease-in-out infinite;
+  }
+}
+
+@keyframes secBotFloatA {
+  0%, 100% { transform: translateY(0) rotate(-4deg) scale(1); }
+  50% { transform: translateY(-18px) rotate(4deg) scale(1.04); }
+}
+
+@keyframes secBotFloatB {
+  0%, 100% { transform: translateY(0) rotate(4deg) scale(1); }
+  50% { transform: translateY(-14px) rotate(-4deg) scale(1.04); }
+}
+
+#about-bot { top: 8%; right: 8%; width: 110px; height: 110px; }
+#projects-bot { top: 4%; left: 7%; width: 90px; height: 90px; }
+#avis-bot { bottom: 10%; right: 9%; width: 130px; height: 130px; }
+#experience-bot { top: 10%; right: 7%; width: 100px; height: 100px; }
+#contact-bot { top: 4%; left: 8%; width: 115px; height: 115px; }
+
+@media (max-width: 1100px) {
+  #about-bot { width: 85px; height: 85px; right: 4%; }
+  #projects-bot { width: 70px; height: 70px; left: 3%; }
+  #avis-bot { width: 100px; height: 100px; right: 4%; }
+  #experience-bot { width: 78px; height: 78px; right: 3%; }
+  #contact-bot { width: 90px; height: 90px; left: 4%; }
+}
+
+@media (max-width: 900px) {
+  .sec-bot {
+    width: 56px !important;
+    height: 56px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .sec-bot {
+    display: none;
+  }
+}
+
+// drifting satellite (experience section)
+#exp-satellite {
+  width: 100px;
+  height: 100px;
+  bottom: 8%;
+  right: 7%;
+  animation: satFloat 7s ease-in-out infinite;
+
+  .sat-blink {
+    animation: blink 2.2s ease-in-out infinite;
+  }
+}
+
+@keyframes satFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-18px) rotate(6deg) scale(1.04); }
+}
+
+@media (max-width: 1100px) {
+  #exp-satellite { width: 78px; height: 78px; right: 3%; }
+}
+
+@media (max-width: 900px) {
+  #exp-satellite { width: 56px; height: 56px; }
+}
+
+@media (max-width: 640px) {
+  #exp-satellite { display: none; }
+}
