@@ -27,7 +27,7 @@ return [
         'title_line_2' => 'curieux par nature.',
         'paragraphs' => [
             'Belge, fraîchement <strong>diplômé en janvier 2026</strong> en développement web (option infographie). Je code, mais je designe aussi. Les deux se nourrissent l\'un l\'autre.',
-            'J\'ai fait mes armes avec un <strong>stage de 15 semaines chez Web Synchrone</strong> (Barchon), et j\'ai mené plusieurs <strong>projets indépendants</strong> pour des clients particuliers en parallèle.',
+            'J\'ai fait mes armes avec un <strong>stage de 15 semaines chez Synchrone</strong> (Barchon), et j\'ai mené plusieurs <strong>projets indépendants</strong> pour des clients particuliers en parallèle.',
             'Ce qui me motive, c\'est d\'apprendre en continu de nouvelle techno, nouvel outil, nouvelle façon de designer une interface. Aujourd\'hui je suis <strong>ouvert à un poste</strong> comme à des missions freelance.',
         ],
     ],
