@@ -1,0 +1,28 @@
+@media (max-width: 900px) {
+  .who-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .who-photo-wrap {
+    margin: 8px 16px 28px;
+    max-width: 340px;
+  }
+
+  .who-badge {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .who-badge-1 {
+    left: -10px;
+  }
+
+  .who-badge-2 {
+    right: -12px;
+  }
+
+  .who-badge-3 {
+    left: 10px;
+  }
+}

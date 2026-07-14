@@ -1,0 +1,17 @@
+@media (max-width: 640px) {
+  .timeline {
+    padding-left: 20px;
+  }
+
+  .tl-item {
+    padding-left: 24px;
+  }
+
+  .tl-dot {
+    left: -20px;
+
+    &.large {
+      left: -22px;
+    }
+  }
+}

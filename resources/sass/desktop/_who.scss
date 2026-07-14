@@ -1,0 +1,89 @@
+.who-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.who-p {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.85;
+  margin-bottom: 18px;
+
+  strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+}
+
+.who-photo-wrap {
+  position: relative;
+  isolation: isolate;
+  margin: 8px 28px 32px;
+}
+
+.who-photo {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  box-shadow: 0 24px 60px rgba(124, 58, 237, .16), 0 4px 16px rgba(0, 0, 0, .06);
+}
+
+.who-badge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, .92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--blue-border);
+  border-radius: 30px;
+  box-shadow: 0 10px 28px rgba(124, 58, 237, .18);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.who-badge-icon {
+  display: flex;
+  color: var(--blue);
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.who-badge-1 {
+  top: -16px;
+  left: -24px;
+  animation: whoBadgeFloatA 5.5s ease-in-out infinite;
+}
+
+.who-badge-2 {
+  top: 42%;
+  right: -30px;
+  animation: whoBadgeFloatB 6.5s ease-in-out infinite;
+}
+
+.who-badge-3 {
+  bottom: -16px;
+  left: 24px;
+  animation: whoBadgeFloatA 6s ease-in-out infinite reverse;
+}
+
+@keyframes whoBadgeFloatA {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+@keyframes whoBadgeFloatB {
+  0%, 100% { transform: translateY(0) rotate(3deg); }
+  50% { transform: translateY(-12px) rotate(-2deg); }
+}
