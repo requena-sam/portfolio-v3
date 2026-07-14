@@ -1,3 +1,20 @@
+// ── THEME TOGGLE — light/dark, persisted in localStorage ──
+const themeToggle = document.getElementById('themeToggle');
+if (themeToggle) {
+    themeToggle.setAttribute('aria-checked', document.documentElement.getAttribute('data-theme') === 'dark');
+    themeToggle.addEventListener('click', () => {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        if (isDark) {
+            document.documentElement.removeAttribute('data-theme');
+            localStorage.setItem('theme', 'light');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+        }
+        themeToggle.setAttribute('aria-checked', !isDark);
+    });
+}
+
 // ── CURTAIN — skip if navigating between pages ──
 (function () {
     const curtain = document.getElementById('curtain');

@@ -12,13 +12,17 @@
 }
 
 .cta-dark {
-  background: var(--text);
+  background: var(--ink);
   color: #fff;
   box-shadow: 0 2px 12px rgba(0, 0, 0, .12);
 
   &:hover {
     background: #1a1a2e;
     box-shadow: 0 6px 20px rgba(0, 0, 0, .18);
+  }
+
+  [data-theme="dark"] & {
+    border: 1px solid rgba(255, 255, 255, .12);
   }
 }
 

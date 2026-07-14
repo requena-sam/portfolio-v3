@@ -30,7 +30,7 @@
     white-space: nowrap;
     opacity: 0;
     transition: opacity .2s;
-    background: rgba(255, 255, 255, .95);
+    background: rgba(var(--surface-rgb), .95);
     padding: 3px 8px;
     border-radius: 5px;
     border: 1px solid var(--border);

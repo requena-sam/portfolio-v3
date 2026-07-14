@@ -14,6 +14,11 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script>
+(function () {
+    if (localStorage.getItem('theme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+})();
+</script>
 <title>{{ $title }}</title>
 <meta name="description" content="{{ $metaDescription }}">
 <link rel="canonical" href="{{ $canonicalUrl }}">

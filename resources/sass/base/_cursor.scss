@@ -33,6 +33,17 @@
   }
 }
 
+// multiply darkens onto a light page (nice subtle tint) but on a dark page it
+// multiplies toward black and the dot disappears — screen lightens instead,
+// keeping it visible there.
+[data-theme="dark"] #cursor {
+  mix-blend-mode: screen;
+}
+
+html.is-safari[data-theme="dark"] #cursor {
+  mix-blend-mode: normal;
+}
+
 #cursor-trail {
   position: fixed;
   top: 0;

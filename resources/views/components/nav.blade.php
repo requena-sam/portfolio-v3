@@ -13,6 +13,11 @@
     <a href="{{ $active === 'home' ? '#contact' : route('home').'#contact' }}" class="nav-cta">
         <span class="dot-g" aria-hidden="true"></span><span class="label">{{ __('common.nav.cta_available') }}</span>
     </a>
+    <button class="theme-switch" id="themeToggle" type="button" role="switch" aria-checked="false" aria-label="Basculer entre le mode clair et sombre">
+        <svg class="theme-switch-icon theme-switch-icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.5M12 19v2.5M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M2.5 12h2.5M19 12h2.5M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <svg class="theme-switch-icon theme-switch-icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        <span class="theme-switch-thumb" aria-hidden="true"></span>
+    </button>
     <button class="nav-burger" id="navBurger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-drawer"><span></span><span></span><span></span></button>
 </nav>
 <div id="nav-overlay" onclick="closeDrawer()"></div>

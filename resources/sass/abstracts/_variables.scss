@@ -16,6 +16,34 @@
   --accent: #7C3AED;
   --accent-soft: #F5F3FF;
   --accent-border: #DDD6FE;
+
+  // fixed near-black "ink" surface for dark chips/buttons — stays dark in both themes, unlike --text
+  --ink: #0A0A12;
+
+  // raw channel triplets, for spots that need a translucent surface (rgba() can't read a hex var directly)
+  --surface-rgb: 255, 255, 255;
+  --border-rgb: 229, 231, 235;
+}
+
+[data-theme="dark"] {
+  --blue-bg: rgba(124, 58, 237, .16);
+  --blue-border: rgba(124, 58, 237, .38);
+  --text: #F1F0F5;
+  --muted: #9CA3AF;
+  --light: #6B7280;
+  --border: #2A2A35;
+  --bg: #0B0B12;
+  --bg2: #15151F;
+
+  --accent-soft: rgba(124, 58, 237, .16);
+  --accent-border: rgba(124, 58, 237, .38);
+
+  --surface-rgb: 21, 21, 31;
+  --border-rgb: 42, 42, 53;
+
+  // lighter than --bg/nav surface so "always-dark" chips (nav-cta, back-to-top,
+  // cta-dark) still read as raised instead of disappearing into the page
+  --ink: #2A2A38;
 }
 
 $bp-1100: 1100px;
