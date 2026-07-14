@@ -1,0 +1,15 @@
+@media (max-width: 640px) {
+  .page-intro {
+    gap: 18px;
+  }
+
+  .page-avatar {
+    width: 68px;
+    height: 68px;
+    font-size: 22px;
+  }
+
+  body.has-page-hero .sec {
+    padding: 64px 0;
+  }
+}
