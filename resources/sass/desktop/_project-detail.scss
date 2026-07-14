@@ -1,0 +1,210 @@
+// single project detail page (resources/views/pages/projects/show.blade.php)
+.proj-detail-head {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+
+.proj-detail-logo {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: var(--blue-bg);
+  border: 1px solid var(--blue-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  flex-shrink: 0;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 6px;
+  }
+}
+
+.proj-detail-ttl {
+  font-size: clamp(22px, 2.6vw, 30px);
+  margin-bottom: 10px;
+}
+
+.proj-detail-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  .proj-yr {
+    margin-left: 0;
+    font-size: 13px;
+    padding: 3px 10px;
+    border-radius: 5px;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+}
+
+// the detail page's own hero needs less breathing room than the About/Projects
+// list heroes, so tighten it up only when it sits right above this section
+#pagehero:has(+ .proj-detail-sec) {
+  padding-bottom: 28px;
+}
+
+.proj-detail-sec {
+  padding-top: 0;
+}
+
+// image grid — main screenshot on top, remaining ones in a 2-col row below
+.proj-gallery {
+  margin-bottom: 48px;
+}
+
+.proj-gallery-main {
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: var(--bg2);
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  margin-bottom: 16px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.proj-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.proj-gallery-img {
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--bg2);
+  overflow: hidden;
+  aspect-ratio: 16/9;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+// description + stack side-by-side
+.proj-detail-content {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 56px;
+  align-items: start;
+}
+
+.proj-detail-desc {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.85;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+
+  strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+}
+
+.proj-detail-stack {
+  min-width: 0;
+  position: sticky;
+  top: 90px;
+}
+
+.proj-detail-block {
+  margin-bottom: 28px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.proj-detail-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.proj-detail-btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.proj-detail-heading {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+// color palette — full width, below the description/stack row
+.proj-detail-palette {
+  margin-top: 48px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+}
+
+.proj-palette {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 460px;
+}
+
+.proj-swatch {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0;
+  transition: transform .2s;
+
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-3px);
+  }
+}
+
+.proj-swatch-hex {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 9px 0;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(0, 0, 0, .55);
+  opacity: 0;
+  transition: opacity .18s, background .18s;
+}
+
+.proj-swatch:hover .proj-swatch-hex,
+.proj-swatch:focus-visible .proj-swatch-hex {
+  opacity: 1;
+}
+
+.proj-swatch.copied .proj-swatch-hex {
+  opacity: 1;
+  background: rgba(124, 58, 237, .85);
+}
