@@ -1,0 +1,17 @@
+@media (max-width: 640px) {
+  .proj {
+    padding: 22px;
+    border-radius: 16px;
+  }
+
+  .proj-imgs.count-2,
+  .proj-imgs.count-3 {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+
+    .img-main {
+      grid-row: auto;
+      aspect-ratio: 16/9;
+    }
+  }
+}
