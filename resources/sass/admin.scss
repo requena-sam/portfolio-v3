@@ -1,0 +1,15 @@
+// ────────────────────────────────────────
+// ADMIN — separate stylesheet entry point, sharing the public site's
+// design tokens and container width (via abstracts/variables + base/wrap)
+// but without its JS-driven cursor/curtain/reveal effects.
+// ────────────────────────────────────────
+
+@use 'abstracts/variables' as *;
+@use 'base/wrap' as *;
+
+@use 'admin/reset' as *;
+@use 'admin/layout' as *;
+@use 'admin/modal' as *;
+@use 'admin/forms' as *;
+@use 'admin/tables' as *;
+@use 'admin/buttons' as *;

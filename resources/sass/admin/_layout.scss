@@ -1,0 +1,268 @@
+// ambient background — same grid + glow language as the public #pagehero
+#admin-grid-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image:
+    linear-gradient(to right, rgba(124, 58, 237, .05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(124, 58, 237, .05) 1px, transparent 1px);
+  background-size: 46px 46px;
+  mask-image: radial-gradient(ellipse 60% 60% at 20% 0%, black 20%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse 60% 60% at 20% 0%, black 20%, transparent 70%);
+}
+
+#admin-glow {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse 50% 50% at 15% 0%, rgba(124, 58, 237, .12) 0%, transparent 65%);
+}
+
+// floating pill nav — visual twin of the public site's <nav>
+.admin-nav {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 7px 8px 7px 6px;
+  background: rgba(255, 255, 255, .88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(229, 231, 235, .85);
+  border-radius: 50px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, .06);
+  white-space: nowrap;
+}
+
+.admin-nav-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #fff;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: -.03em;
+  flex-shrink: 0;
+  box-shadow: 0 2px 10px rgba(124, 58, 237, .3);
+  transition: transform .45s cubic-bezier(.34, 1.56, .64, 1);
+
+  &:hover {
+    transform: rotate(360deg) scale(1.08);
+  }
+}
+
+.admin-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  margin: 0 2px;
+}
+
+.admin-nav-link {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  padding: 7px 15px;
+  border-radius: 30px;
+  transition: color .2s, background .2s;
+
+  &:hover {
+    color: var(--text);
+  }
+
+  &.active {
+    background: var(--blue);
+    color: #fff;
+    font-weight: 700;
+  }
+}
+
+.admin-nav-logout {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--text);
+  border: none;
+  border-radius: 30px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background .2s;
+
+  &:hover {
+    background: var(--blue);
+  }
+}
+
+// page shell
+.admin-page {
+  padding: 150px 0 110px;
+  min-height: 100vh;
+}
+
+.admin-eyebrow {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .04em;
+  color: var(--blue);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  &::before {
+    content: '//';
+    color: var(--blue-light);
+  }
+}
+
+.admin-page-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.admin-page-title {
+  font-size: clamp(30px, 4vw, 46px);
+  font-weight: 900;
+  letter-spacing: -.04em;
+  line-height: 1.05;
+}
+
+// stat cards (dashboard)
+.admin-cards {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.admin-card {
+  flex: 1;
+  min-width: 220px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 28px;
+  transition: border-color .3s, box-shadow .4s, transform .25s;
+
+  &:hover {
+    border-color: var(--blue-border);
+    box-shadow: 0 24px 60px rgba(124, 58, 237, .14), 0 4px 16px rgba(0, 0, 0, .04);
+    transform: translateY(-2px);
+  }
+}
+
+.admin-card-count {
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--blue);
+  font-family: var(--mono);
+  line-height: 1;
+}
+
+.admin-card-label {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+// panel — rounded bordered container (wraps tables, message lists...)
+.admin-panel {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.admin-pagination {
+  margin-top: 20px;
+}
+
+.admin-status {
+  background: var(--blue-bg);
+  border: 1px solid var(--blue-border);
+  color: var(--blue);
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+// guest (login) shell
+.admin-guest-shell {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.admin-guest-card {
+  width: 100%;
+  max-width: 380px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 30px 80px rgba(124, 58, 237, .12), 0 4px 16px rgba(0, 0, 0, .04);
+}
+
+.admin-guest-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: var(--blue);
+  color: #fff;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(124, 58, 237, .32);
+  margin-bottom: 20px;
+}
+
+.admin-guest-title {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -.02em;
+  margin-bottom: 28px;
+}
+
+@media (max-width: 640px) {
+  .admin-nav {
+    left: 12px;
+    right: 12px;
+    transform: none;
+  }
+
+  .admin-nav-links {
+    gap: 0;
+  }
+
+  .admin-nav-link {
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+
+  .admin-page {
+    padding: 120px 0 80px;
+  }
+}
