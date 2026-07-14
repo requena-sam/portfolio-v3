@@ -1,0 +1,45 @@
+// ────────────────────────────────────────
+// PORTFOLIO — main stylesheet entry point
+// ────────────────────────────────────────
+
+@use 'abstracts/variables' as *;
+
+@use 'base/reset' as *;
+@use 'base/global' as *;
+@use 'base/cursor' as *;
+@use 'base/reveal' as *;
+@use 'base/wrap' as *;
+
+@use 'components/nav' as *;
+@use 'components/footer' as *;
+@use 'components/buttons' as *;
+@use 'components/back-to-top' as *;
+@use 'components/scroll-dots' as *;
+@use 'components/section-heading' as *;
+@use 'components/tech' as *;
+@use 'components/decor' as *;
+
+@use 'desktop/hero' as *;
+@use 'desktop/about' as *;
+@use 'desktop/projects' as *;
+@use 'desktop/project-detail' as *;
+@use 'desktop/testimonials' as *;
+@use 'desktop/experience' as *;
+@use 'desktop/contact' as *;
+@use 'desktop/page-hero' as *;
+@use 'desktop/who' as *;
+@use 'desktop/skills' as *;
+@use 'desktop/timeline' as *;
+@use 'desktop/errors' as *;
+
+@use 'mobile/hero' as *;
+@use 'mobile/about' as *;
+@use 'mobile/projects' as *;
+@use 'mobile/project-detail' as *;
+@use 'mobile/testimonials' as *;
+@use 'mobile/experience' as *;
+@use 'mobile/contact' as *;
+@use 'mobile/page-hero' as *;
+@use 'mobile/who' as *;
+@use 'mobile/skills' as *;
+@use 'mobile/timeline' as *;
